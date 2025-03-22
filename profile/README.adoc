@@ -1,1 +1,65 @@
+:toc:
+:toclevels: 5
+:toc-placement!:
+:source-highlighter: highlight.js
+ifdef::env-github[]
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+:github-repository: https://github.com/git2RDFLab/project-deployment-compose
+endif::[]
+
+++++
+<a href="https://github.com/git2RDFLab/"><img align="right" role="right" height="96" src="https://github.com/git2RDFLab/.github/blob/main/profile/images/GitLotus-logo.png?raw=true" style="height: 96px;z-index: 1000000" title="GitLotus" alt="GitLotus"/></a>
+++++
+
 = GitLotus
+
+GitLotus is a tool for extracting RDF data from Git repositories.
+
+Git-based project data holds valuable insights beyond version control, including collaboration patterns and project management details. 
+However, the heterogeneity of Git hosting platforms complicates unified analysis. 
+GitLotus addresses this challenge by transforming Git repositories into RDF, enabling a structured and platform-independent representation. 
+It extracts repository data via the Git protocol, integrates metadata from GitHub while handling API limitations, and exposes results through persistent SPARQL endpoints.
+
+---
+
+toc::[]
+
+---
+
+== Features
+
+* Extracts Git repository data via the Git protocol
+* Integrates metadata from GitHub while handling API limitations
+* Exposes results through persistent SPARQL endpoints or as downloadable RDF/Turtle files
+
+== Installation
+
+GitLotus is a Docker-based application that can be installed on a server or a local machine via https://github.com/git2RDFLab/project-deployment-compose[Docker compose (for installation instructions see project-deployment-compose)] or as a standalone applications where four componnents need to be installed separately:
+
+* https://github.com/git2RDFLab/ccr-listener-prototype[GitLotus listener service] for accepting Git repositories and providing status information
+* https://github.com/git2RDFLab/ccr-worker-prototype[GitLotus worker service] for scheduling conversion of Git repositories to RDF files
+* https://github.com/git2RDFLab/sparql-query-prototype[GitLotus SPARQL query endpoint] for querying the extracted RDF data from the different instances
+* GitLotus data sink (we use by default a PostgreSQL database, but other data sinks can be used)
+
+== RDF vocabulary
+
+The GitLotus RDF vocabulary is available at https://github.com/git2RDFLab/[gitlotus-vocabulary].
+
+== Contribute
+
+We are happy to receive your contributions. 
+Please create a pull request or an issue in the corresponding repository. 
+As this tool is published under the MIT license, feel free to fork it and use it in your own projects.
+
+== Disclaimer
+
+This tool just temporarily stores the image data. 
+It is provided "as is" and without any warranty, express or implied.
+
+
+
+
