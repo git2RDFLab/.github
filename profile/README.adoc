@@ -15,14 +15,16 @@ endif::[]
 <a href="https://github.com/git2RDFLab/"><img align="right" role="right" height="96" src="https://github.com/git2RDFLab/.github/blob/main/profile/images/GitLotus-logo.png?raw=true" style="height: 96px;z-index: 1000000" title="GitLotus" alt="GitLotus"/></a>
 ++++
 
-= GitLotus
+= GitLotus -- Git to RDF Web Service
 
 GitLotus is a tool for extracting RDF data from Git repositories.
 
 Git-based project data holds valuable insights beyond version control, including collaboration patterns and project management details. 
 However, the heterogeneity of Git hosting platforms complicates unified analysis. 
 GitLotus addresses this challenge by transforming Git repositories into RDF, enabling a structured and platform-independent representation. 
+Hence, our approach is generating an easy-to-use bridge from the source code world to the semantic web; just like a https://en.wikipedia.org/wiki/Nelumbo[Lotus flower] floats on a lake, GitLotus floats on Git data and creates new offsprings (views).
 It extracts repository data via the Git protocol, integrates metadata from GitHub while handling API limitations, and exposes results through persistent SPARQL endpoints.
+
 
 ---
 
