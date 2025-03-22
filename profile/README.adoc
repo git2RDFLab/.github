@@ -36,20 +36,28 @@ toc::[]
 
 * Extracts Git repository data via the Git protocol
 * Integrates metadata from GitHub while handling API limitations
-* Exposes results through persistent SPARQL endpoints or as downloadable RDF/Turtle files
+* Exposes results through persistent SPARQL endpoints (one for each stored Git repository transformation task) or as downloadable RDF/Turtle files
 
-== Installation
 
-GitLotus is a Docker-based application that can be installed on a server or a local machine via https://github.com/git2RDFLab/project-deployment-compose[Docker compose (for installation instructions see project-deployment-compose)] or as a standalone applications where four componnents need to be installed separately:
+== Architecture
+
++++
+<img src="https://github.com/git2RDFLab/.github/blob/main/profile/images/GitLotus-architecture.svg?raw=true" alt="GitLotus architecture" title="GitLotus architecture"/>
++++ 
+
+== Components and Installation
+
+GitLotus is a Docker-based application that can be installed on a server or a local machine via https://github.com/git2RDFLab/project-deployment-compose[Docker compose (for installation instructions see project-deployment-compose)] or as a standalone applications where four Spring Boot components need to be installed separately:
 
 * https://github.com/git2RDFLab/ccr-listener-prototype[GitLotus listener service] for accepting Git repositories and providing status information
 * https://github.com/git2RDFLab/ccr-worker-prototype[GitLotus worker service] for scheduling conversion of Git repositories to RDF files
 * https://github.com/git2RDFLab/sparql-query-prototype[GitLotus SPARQL query endpoint] for querying the extracted RDF data from the different instances
 * GitLotus data sink (we use by default a PostgreSQL database, but other data sinks can be used)
 
-== RDF vocabulary
+== GitLotus RDF vocabulary
 
-The GitLotus RDF vocabulary is available at https://github.com/git2RDFLab/[gitlotus-vocabulary].
+The GitLotus RDF vocabulary defines the classes and properties used to represent Git repository data in RDF.
+It is available at https://github.com/git2RDFLab/[gitlotus-vocabulary].
 
 == Contribute
 
